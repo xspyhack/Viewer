@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="j1y-V4-xli">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Share View Controller-->
+        <scene sceneID="ceB-am-kn3">
+            <objects>
+                <viewController id="j1y-V4-xli" customClass="ShareViewController" customModule="ViewerShareExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8bI-gs-bmD"/>
+                        <viewControllerLayoutGuide type="bottom" id="d5i-Ba-RvD"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="wbc-yd-nQP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDr-48-uel">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbB-eY-iQN">
+                                <rect key="frame" x="240" y="277" width="120" height="46"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shared" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiI-Gy-bnM">
+                                        <rect key="frame" x="54" y="13" width="54.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.090196078431372548" green="0.3411764705882353" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNt-EY-5my" userLabel="Open Button">
+                                        <rect key="frame" x="8" y="3" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="1h4-2C-IJI"/>
+                                            <constraint firstAttribute="height" constant="40" id="Lev-rm-zL7"/>
+                                        </constraints>
+                                        <state key="normal" image="Icon-40"/>
+                                        <connections>
+                                            <action selector="openTapped:" destination="j1y-V4-xli" eventType="touchUpInside" id="ii3-p6-ASX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="2bT-k3-Zvk"/>
+                                    <constraint firstItem="aiI-Gy-bnM" firstAttribute="leading" secondItem="kNt-EY-5my" secondAttribute="trailing" constant="6" id="A8b-9Y-Lrq"/>
+                                    <constraint firstAttribute="width" constant="120" id="ArO-3o-yqV"/>
+                                    <constraint firstItem="kNt-EY-5my" firstAttribute="centerY" secondItem="nbB-eY-iQN" secondAttribute="centerY" id="EG2-CV-iK7"/>
+                                    <constraint firstItem="kNt-EY-5my" firstAttribute="leading" secondItem="nbB-eY-iQN" secondAttribute="leading" constant="8" id="PaE-aj-F5F"/>
+                                    <constraint firstItem="aiI-Gy-bnM" firstAttribute="centerY" secondItem="nbB-eY-iQN" secondAttribute="centerY" id="WVA-E4-EIr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="EDr-48-uel" firstAttribute="top" secondItem="8bI-gs-bmD" secondAttribute="bottom" id="Bq3-UZ-Ldh"/>
+                            <constraint firstItem="EDr-48-uel" firstAttribute="top" secondItem="wbc-yd-nQP" secondAttribute="top" id="bzh-ij-k3T"/>
+                            <constraint firstItem="nbB-eY-iQN" firstAttribute="centerY" secondItem="wbc-yd-nQP" secondAttribute="centerY" id="eQs-Ft-XBz"/>
+                            <constraint firstAttribute="trailing" secondItem="EDr-48-uel" secondAttribute="trailing" id="hvv-cn-NbB"/>
+                            <constraint firstItem="nbB-eY-iQN" firstAttribute="centerX" secondItem="wbc-yd-nQP" secondAttribute="centerX" id="kc8-h7-1yh"/>
+                            <constraint firstItem="d5i-Ba-RvD" firstAttribute="top" secondItem="EDr-48-uel" secondAttribute="bottom" id="pma-5s-qWS"/>
+                            <constraint firstItem="EDr-48-uel" firstAttribute="leading" secondItem="wbc-yd-nQP" secondAttribute="leading" id="yvH-ea-E2u"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Bq3-UZ-Ldh"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="alertView" destination="nbB-eY-iQN" id="6nY-ed-Plr"/>
+                        <outlet property="backgroundMaskView" destination="EDr-48-uel" id="5l3-OE-o7Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CEy-Cv-SGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="539" y="97"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon-40" width="40" height="40"/>
+    </resources>
+</document>

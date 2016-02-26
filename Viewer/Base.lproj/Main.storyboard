@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oQZ-gs-Z1Q">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9S-D3-TeG">
+                                <rect key="frame" x="275" y="600" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CdP-9W-YIg"/>
+                                    <constraint firstAttribute="width" constant="50" id="zew-RR-wZm"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BO-sn-Woh">
+                                <rect key="frame" x="280" y="605" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KtX-Je-9nE"/>
+                                    <constraint firstAttribute="width" constant="40" id="bCm-g9-ksc"/>
+                                </constraints>
+                                <state key="normal" image="inner"/>
+                            </button>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhl-NO-SBc">
+                                <rect key="frame" x="280" y="605" width="40" height="40"/>
+                                <state key="normal" image="outer"/>
+                                <connections>
+                                    <segue destination="l9H-1M-ItK" kind="show" identifier="showSetting" id="pfY-BL-xBO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7BO-sn-Woh" firstAttribute="centerX" secondItem="G9S-D3-TeG" secondAttribute="centerX" id="J13-nH-67T"/>
+                            <constraint firstItem="Nhl-NO-SBc" firstAttribute="centerX" secondItem="7BO-sn-Woh" secondAttribute="centerX" id="QGC-Kh-haq"/>
+                            <constraint firstItem="Nhl-NO-SBc" firstAttribute="width" secondItem="7BO-sn-Woh" secondAttribute="width" id="TJL-Rh-01f"/>
+                            <constraint firstItem="Nhl-NO-SBc" firstAttribute="centerY" secondItem="7BO-sn-Woh" secondAttribute="centerY" id="W6w-7W-1oL"/>
+                            <constraint firstItem="G9S-D3-TeG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="csO-e6-2D5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="G9S-D3-TeG" secondAttribute="bottom" constant="-50" id="ozQ-iv-sxK"/>
+                            <constraint firstItem="7BO-sn-Woh" firstAttribute="centerY" secondItem="G9S-D3-TeG" secondAttribute="centerY" id="wyq-XQ-Xaz"/>
+                            <constraint firstItem="Nhl-NO-SBc" firstAttribute="height" secondItem="7BO-sn-Woh" secondAttribute="height" id="xs0-Yo-Ai5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MLl-6V-q6Z">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="&lt;/&gt;" id="FjB-8D-tPK">
+                            <connections>
+                                <segue destination="EUO-Nu-IY0" kind="show" identifier="showSource" id="7xl-L3-PMe"/>
+                            </connections>
+                        </barButtonItem>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter URL" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="czM-Ao-YZF" customClass="EdgesTextField" customModule="Viewer" customModuleProvider="target">
+                            <rect key="frame" x="84" y="7" width="432" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                            <connections>
+                                <outlet property="delegate" destination="BYZ-38-t0r" id="bRY-5t-W5d"/>
+                            </connections>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="action" id="3Gk-BU-JgB">
+                            <connections>
+                                <action selector="action:" destination="BYZ-38-t0r" id="5mC-b8-RXm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="actionItem" destination="3Gk-BU-JgB" id="MSW-r4-szC"/>
+                        <outlet property="backgroundView" destination="G9S-D3-TeG" id="QEf-hU-FSh"/>
+                        <outlet property="innerButton" destination="7BO-sn-Woh" id="dfR-TG-Wjq"/>
+                        <outlet property="loadingBottom" destination="ozQ-iv-sxK" id="A68-2Q-iK2"/>
+                        <outlet property="outerButton" destination="Nhl-NO-SBc" id="mBv-lM-AEt"/>
+                        <outlet property="sourceItem" destination="FjB-8D-tPK" id="xqn-k5-oTY"/>
+                        <outlet property="textField" destination="czM-Ao-YZF" id="CDq-0d-riI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1538" y="-365"/>
+        </scene>
+        <!--Source-->
+        <scene sceneID="MJd-mF-jM7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Source" id="EUO-Nu-IY0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JIn-SC-sMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2062.5" y="-413"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="gnz-iT-aYr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" id="l9H-1M-ItK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2dD-5k-qDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2062" y="-296"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MTj-XP-EWl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oQZ-gs-Z1Q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nbL-T1-NeH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6UE-lx-ZFc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p8b-3L-HfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="322" y="-379"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="inner" width="40" height="40"/>
+        <image name="outer" width="40" height="40"/>
+    </resources>
+</document>
