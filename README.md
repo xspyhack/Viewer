@@ -1,6 +1,6 @@
 ### Viewer - View the real
 
-Viewer is an simple tool to view web page source code.
+Viewer is a simple tool to view web page source code.
 
 ##### You can view web page source code with the following ways:
 
