@@ -31,16 +31,15 @@ class ShareViewController: UIViewController {// SLComposeServiceViewController {
     }
     
     private func fetchURL() {
-        // get
-        if let item = self.extensionContext?.inputItems.first as? NSExtensionItem {
-            if let itemProvider = item.attachments?.first as? NSItemProvider {
-                if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeURL as String) {
-                    itemProvider.loadItemForTypeIdentifier(kUTTypeURL as String, options: nil, completionHandler: { [weak self](item, error) -> Void in
-                        self?.shareURL(item as? NSURL)
-                        self?.showAlertView()
-                        })
-                }
-            }
+        // Flatten if let..else pyramids
+        guard let item = self.extensionContext?.inputItems.first as? NSExtensionItem,
+            itemProvider = item.attachments?.first as? NSItemProvider where itemProvider.hasItemConformingToTypeIdentifier(kUTTypeURL as String)
+            else {
+                return
+        }
+        itemProvider.loadItemForTypeIdentifier(kUTTypeURL as String, options: nil) { [weak self](item, error) -> Void in
+            self?.shareURL(item as? NSURL)
+            self?.showAlertView()
         }
     }
     

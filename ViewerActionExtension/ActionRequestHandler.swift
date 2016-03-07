@@ -17,23 +17,18 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
         // Do not call super in an Action extension with no user interface
         self.extensionContext = context
         
-        
-        for item: AnyObject in context.inputItems {
-            
-            if let inputItem = item as? NSExtensionItem, attachments = inputItem.attachments {
-                for provider: AnyObject in attachments {
-                    if let itemProvider = provider as? NSItemProvider {
-                        if itemProvider.hasItemConformingToTypeIdentifier(String(kUTTypePropertyList)) {
-                            itemProvider.loadItemForTypeIdentifier(String(kUTTypePropertyList), options: nil, completionHandler: { [unowned self](item, error) in
-                                let dictionary = item as! [String: AnyObject]
-                                self.itemLoadCompletedWithPreprocessingResults(dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as! [NSObject: AnyObject])
-                                })
-                        }
-                    }
-                }
-            }
+        // Flatten if let..else pyramids
+        // Here just get the first item, you can iterate all items
+        guard let item = self.extensionContext?.inputItems.first as? NSExtensionItem,
+            itemProvider = item.attachments?.first as? NSItemProvider where itemProvider.hasItemConformingToTypeIdentifier(String(kUTTypePropertyList))
+            else {
+                return
         }
-        
+        itemProvider.loadItemForTypeIdentifier(String(kUTTypePropertyList), options: nil) { [unowned self](item, error) -> Void in
+            let dictionary = item as! [String: AnyObject]
+            self.itemLoadCompletedWithPreprocessingResults(dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as! [NSObject: AnyObject])
+        }
+
         /*
         // This Apple simple example fucking not work, 💩
         
@@ -73,12 +68,69 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
         
         let HTMLString = javaScriptPreprocessingResults["innerHTML"]
         if var HTMLString = HTMLString as? String {
+            // Here we can use map { $0 == "<" ? "&lt" : $0 }
             HTMLString = HTMLString.stringByReplacingOccurrencesOfString("<", withString: "&lt")
             HTMLString = HTMLString.stringByReplacingOccurrencesOfString(">", withString: "&gt")
+            parse(&HTMLString)
             HTMLString = "&lthtml&gt" + HTMLString + "&lt/html&gt"
             self.doneWithResults(["newInnerHTML": HTMLString])
         } else {
             self.doneWithResults(["message": "Can't get the HTML source."])
+        }
+    }
+    
+    private func parse(inout string: String) {
+        highlighted(&string)
+    }
+    
+    private func highlighted(inout string: String) {
+        highlightHref(&string)
+        highlightSrc(&string)
+    }
+    
+    private func highlightHref(inout string: String) {
+        let pattern = "(?<=href=[\'\"]?)([^\'\"]+).*?(?=[\'\"])"
+        let matcher: RegexHelper
+        do {
+            matcher = try RegexHelper(pattern)
+        } catch {
+            return
+        }
+        
+        var hrefs = [String]()
+        matcher.enumerateMatches(string) { (result) -> Void in
+            if let result = result {
+                let href = (string as NSString).substringWithRange(result.range)
+                hrefs.append(href)
+            }
+        }
+        
+        for href in hrefs {
+            let newHref = "<a href=\"" + href + "\" target=\"_blank\">" + href + "</a>"
+            string = (string as NSString).stringByReplacingOccurrencesOfString(href, withString: newHref)
+        }
+    }
+    
+    private func highlightSrc(inout string: String) {
+        let pattern = "(?<=src=[\'\"]?)([^\'\"]+).*?(?=[\'\"])"
+        let matcher: RegexHelper
+        do {
+            matcher = try RegexHelper(pattern)
+        } catch {
+            return
+        }
+        
+        var srcs = [String]()
+        matcher.enumerateMatches(string) { (result) -> Void in
+            if let result = result {
+                let src = (string as NSString).substringWithRange(result.range)
+                srcs.append(src)
+            }
+        }
+        
+        for src in srcs {
+            let newSrc = "<a href=\"" + src + "\" target=\"_blank\">" + src + "</a>"
+            string = (string as NSString).stringByReplacingOccurrencesOfString(src, withString: newSrc)
         }
     }
     

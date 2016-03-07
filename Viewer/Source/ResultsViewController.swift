@@ -41,7 +41,10 @@ class ResultsViewController: UIViewController {
         
         let matcher: RegexHelper
         do {
-            matcher = try! RegexHelper(pattern)
+            matcher = try RegexHelper(pattern)
+        } catch {
+            tv_print(error)
+            return
         }
         
         let attributedString = NSMutableAttributedString(string: allResults)

@@ -111,8 +111,12 @@ class ViewController: UIViewController {
                 let pattern = "^(http|https)://"
                 let matcher: RegexHelper
                 do {
-                    matcher = try! RegexHelper(pattern)
+                    matcher = try RegexHelper(pattern)
+                } catch {
+                    tv_print(error)
+                    return
                 }
+                
                 if matcher.isMatch(string) {
                     if let url = NSURL(string: string) {
                         requestWithURL(url)
@@ -152,7 +156,7 @@ class ViewController: UIViewController {
                 self?.sourceItem.enabled = true
                 self?.completionHandler()
             } else {
-                print(error.debugDescription)
+                tv_print(error.debugDescription)
 
                 dispatch_async(dispatch_get_main_queue()) { [weak self]() -> Void in
                     self?.stopLoading()
@@ -189,7 +193,10 @@ class ViewController: UIViewController {
         let pattern = "(?<=\"og:image\" content=\")(https://.+.(jpg|png))"
         let matcher: RegexHelper
         do {
-            matcher = try! RegexHelper(pattern)
+            matcher = try RegexHelper(pattern)
+        } catch {
+            tv_print(error)
+            return nil
         }
         
         imageURLString = matcher.firstCapture(HTMLString)
@@ -276,6 +283,7 @@ extension ViewController: WKNavigationDelegate {
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
         actionItem.enabled = loadingImage
+        // Get the contents of html, <html>contents</html>
         webView.evaluateJavaScript("document.all[0].innerHTML") { [weak self](results, error) -> Void in
             self?.HTMLString = results as? String
             self?.sourceItem.enabled = true

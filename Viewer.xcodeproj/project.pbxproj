@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		781915401C7C8375006987AE /* EdgesTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819153F1C7C8375006987AE /* EdgesTextField.swift */; };
 		781915461C7C8976006987AE /* RegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781915451C7C8976006987AE /* RegexHelper.swift */; };
+		782F92771C86BCCF00E3B326 /* LogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782F92761C86BCCF00E3B326 /* LogHelper.swift */; };
+		782F92A11C8D763800E3B326 /* RegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781915451C7C8976006987AE /* RegexHelper.swift */; };
 		7835930F1C7C427200505B4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7835930D1C7C427200505B4C /* Main.storyboard */; };
 		783593111C7C427200505B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783593101C7C427200505B4C /* Assets.xcassets */; };
 		783593141C7C427200505B4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783593121C7C427200505B4C /* LaunchScreen.storyboard */; };
@@ -70,6 +72,7 @@
 /* Begin PBXFileReference section */
 		7819153F1C7C8375006987AE /* EdgesTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgesTextField.swift; sourceTree = "<group>"; };
 		781915451C7C8976006987AE /* RegexHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexHelper.swift; sourceTree = "<group>"; };
+		782F92761C86BCCF00E3B326 /* LogHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogHelper.swift; sourceTree = "<group>"; };
 		783593061C7C427200505B4C /* Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7835930E1C7C427200505B4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		783593101C7C427200505B4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 			children = (
 				781915451C7C8976006987AE /* RegexHelper.swift */,
 				783F4CC51C7DB8EA00F8C7DF /* AppearanceManager.swift */,
+				782F92761C86BCCF00E3B326 /* LogHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -398,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				781915401C7C8375006987AE /* EdgesTextField.swift in Sources */,
+				782F92771C86BCCF00E3B326 /* LogHelper.swift in Sources */,
 				783F4CC61C7DB8EA00F8C7DF /* AppearanceManager.swift in Sources */,
 				783F4CC21C7DA30800F8C7DF /* AppDelegate.swift in Sources */,
 				783F4CBD1C7D683100F8C7DF /* ResultsViewController.swift in Sources */,
@@ -413,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				783F4CF31C7E153200F8C7DF /* ActionRequestHandler.swift in Sources */,
+				782F92A11C8D763800E3B326 /* RegexHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +678,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ViewerShareExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xspyhack.Viewer.ViewerShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -687,6 +694,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ViewerShareExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xspyhack.Viewer.ViewerShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

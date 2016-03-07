@@ -24,6 +24,14 @@ class SettingViewController: UIViewController {
     @IBAction func done(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func sponsorship(sender: AnyObject) {
+        if let url = NSURL(string: "alipayqr://platformapi/startapp?saId=10000007&qrcode=https://qr.alipay.com/aex01834ritbtrlux7ogcbf") {
+            UIApplication.sharedApplication().openURL(url)
+        } else {
+            tv_print("error")
+        }
+    }
 
     /*
     // MARK: - Navigation

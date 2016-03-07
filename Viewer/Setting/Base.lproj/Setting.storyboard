@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRc-JN-TiZ">
-                                <rect key="frame" x="285" y="549" width="30.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.0.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRc-JN-TiZ">
+                                <rect key="frame" x="278" y="549.5" width="44" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.090196078431372548" green="0.3411764705882353" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -29,11 +29,20 @@
                                 <color key="textColor" red="0.090196078431372548" green="0.3411764705882353" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Uf-6s-PmP">
+                                <rect key="frame" x="220" y="433" width="160" height="30"/>
+                                <state key="normal" title="Sponsorship Developer"/>
+                                <connections>
+                                    <action selector="sponsorship:" destination="9hj-jX-woe" eventType="touchUpInside" id="6zg-BJ-xGw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="iRc-JN-TiZ" firstAttribute="top" secondItem="3Uf-6s-PmP" secondAttribute="bottom" constant="86" id="4KG-R2-RdS"/>
                             <constraint firstItem="iRc-JN-TiZ" firstAttribute="centerX" secondItem="iIT-nb-Tqh" secondAttribute="centerX" id="6ut-Zd-Dkg"/>
                             <constraint firstItem="809-3G-pIg" firstAttribute="top" secondItem="iRc-JN-TiZ" secondAttribute="bottom" constant="30" id="8o8-yu-Y3D"/>
+                            <constraint firstItem="3Uf-6s-PmP" firstAttribute="centerX" secondItem="iIT-nb-Tqh" secondAttribute="centerX" id="cz0-tC-rkw"/>
                             <constraint firstItem="hbs-J6-mYz" firstAttribute="centerX" secondItem="iIT-nb-Tqh" secondAttribute="centerX" id="gRW-bD-8kr"/>
                             <constraint firstItem="hbs-J6-mYz" firstAttribute="top" secondItem="Orw-OM-PoQ" secondAttribute="bottom" constant="66" id="w31-5R-zQ4"/>
                         </constraints>
