@@ -77,6 +77,8 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
             */
             
             // Load js & css
+            // You can replace the script and style with others, such as highlight.js.
+            // Here are some syntax highlight script ( http://www.bootcdn.cn/ ).
             let jsPath = NSBundle.mainBundle().pathForResource("rainbow.min", ofType: "js")
             let script = try! String(contentsOfFile: jsPath!, encoding: NSUTF8StringEncoding)
             let cssPath = NSBundle.mainBundle().pathForResource("github.min", ofType: "css")
