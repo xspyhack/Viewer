@@ -11,6 +11,8 @@
 		781915461C7C8976006987AE /* RegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781915451C7C8976006987AE /* RegexHelper.swift */; };
 		782F92771C86BCCF00E3B326 /* LogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782F92761C86BCCF00E3B326 /* LogHelper.swift */; };
 		782F92A11C8D763800E3B326 /* RegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781915451C7C8976006987AE /* RegexHelper.swift */; };
+		782F92C81C8EACDD00E3B326 /* github.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 782F92C61C8EACDD00E3B326 /* github.min.css */; };
+		782F92D11C8EC6FD00E3B326 /* rainbow.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 782F92D01C8EC6FD00E3B326 /* rainbow.min.js */; };
 		7835930F1C7C427200505B4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7835930D1C7C427200505B4C /* Main.storyboard */; };
 		783593111C7C427200505B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783593101C7C427200505B4C /* Assets.xcassets */; };
 		783593141C7C427200505B4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783593121C7C427200505B4C /* LaunchScreen.storyboard */; };
@@ -73,6 +75,8 @@
 		7819153F1C7C8375006987AE /* EdgesTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgesTextField.swift; sourceTree = "<group>"; };
 		781915451C7C8976006987AE /* RegexHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexHelper.swift; sourceTree = "<group>"; };
 		782F92761C86BCCF00E3B326 /* LogHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogHelper.swift; sourceTree = "<group>"; };
+		782F92C61C8EACDD00E3B326 /* github.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = github.min.css; sourceTree = "<group>"; };
+		782F92D01C8EC6FD00E3B326 /* rainbow.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = rainbow.min.js; sourceTree = "<group>"; };
 		783593061C7C427200505B4C /* Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7835930E1C7C427200505B4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		783593101C7C427200505B4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -228,6 +232,8 @@
 				783F4CF21C7E153200F8C7DF /* ActionRequestHandler.swift */,
 				783F4D401C7F682300F8C7DF /* ActionAssets.xcassets */,
 				783F4CF41C7E153200F8C7DF /* Action.js */,
+				782F92D01C8EC6FD00E3B326 /* rainbow.min.js */,
+				782F92C61C8EACDD00E3B326 /* github.min.css */,
 				783F4CF61C7E153200F8C7DF /* Info.plist */,
 				783F4D3E1C7F5AFB00F8C7DF /* InfoPlist.strings */,
 			);
@@ -378,7 +384,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				783F4CFD1C7E1C9E00F8C7DF /* Assets.xcassets in Resources */,
+				782F92C81C8EACDD00E3B326 /* github.min.css in Resources */,
 				783F4D3C1C7F5AFB00F8C7DF /* InfoPlist.strings in Resources */,
+				782F92D11C8EC6FD00E3B326 /* rainbow.min.js in Resources */,
 				783F4D411C7F682300F8C7DF /* ActionAssets.xcassets in Resources */,
 				783F4CF51C7E153200F8C7DF /* Action.js in Resources */,
 			);

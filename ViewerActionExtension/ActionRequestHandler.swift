@@ -30,7 +30,7 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
         }
 
         /*
-        // This Apple simple example fucking not work, 💩
+        // This Apple simple example doesn't fucking work, 💩
         
         var found = false
         
@@ -66,14 +66,24 @@ class ActionRequestHandler: NSObject, NSExtensionRequestHandling {
         // Here, do something, potentially asynchronously, with the preprocessing
         // results.
         
-        let HTMLString = javaScriptPreprocessingResults["innerHTML"]
-        if var HTMLString = HTMLString as? String {
+        let HTMLString = javaScriptPreprocessingResults["html"]
+        if let _ = HTMLString as? String {
             // Here we can use map { $0 == "<" ? "&lt" : $0 }
+            
+            /*
             HTMLString = HTMLString.stringByReplacingOccurrencesOfString("<", withString: "&lt")
             HTMLString = HTMLString.stringByReplacingOccurrencesOfString(">", withString: "&gt")
             parse(&HTMLString)
-            HTMLString = "&lthtml&gt" + HTMLString + "&lt/html&gt"
-            self.doneWithResults(["newInnerHTML": HTMLString])
+            */
+            
+            // Load js & css
+            let jsPath = NSBundle.mainBundle().pathForResource("rainbow.min", ofType: "js")
+            let script = try! String(contentsOfFile: jsPath!, encoding: NSUTF8StringEncoding)
+            let cssPath = NSBundle.mainBundle().pathForResource("github.min", ofType: "css")
+            let style = try! String(contentsOfFile: cssPath!, encoding: NSUTF8StringEncoding)
+        
+            self.doneWithResults(["script": script, "style": style])
+        
         } else {
             self.doneWithResults(["message": "Can't get the HTML source."])
         }

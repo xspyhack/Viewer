@@ -25,13 +25,13 @@
                                 <rect key="frame" x="240" y="277" width="120" height="46"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shared" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiI-Gy-bnM">
-                                        <rect key="frame" x="54" y="13" width="54.5" height="20.5"/>
+                                        <rect key="frame" x="52" y="13" width="54.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.090196078431372548" green="0.3411764705882353" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNt-EY-5my" userLabel="Open Button">
-                                        <rect key="frame" x="8" y="3" width="40" height="40"/>
+                                        <rect key="frame" x="6" y="3" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="1h4-2C-IJI"/>
                                             <constraint firstAttribute="height" constant="40" id="Lev-rm-zL7"/>
@@ -48,7 +48,7 @@
                                     <constraint firstItem="aiI-Gy-bnM" firstAttribute="leading" secondItem="kNt-EY-5my" secondAttribute="trailing" constant="6" id="A8b-9Y-Lrq"/>
                                     <constraint firstAttribute="width" constant="120" id="ArO-3o-yqV"/>
                                     <constraint firstItem="kNt-EY-5my" firstAttribute="centerY" secondItem="nbB-eY-iQN" secondAttribute="centerY" id="EG2-CV-iK7"/>
-                                    <constraint firstItem="kNt-EY-5my" firstAttribute="leading" secondItem="nbB-eY-iQN" secondAttribute="leading" constant="8" id="PaE-aj-F5F"/>
+                                    <constraint firstItem="kNt-EY-5my" firstAttribute="leading" secondItem="nbB-eY-iQN" secondAttribute="leading" constant="6" id="PaE-aj-F5F"/>
                                     <constraint firstItem="aiI-Gy-bnM" firstAttribute="centerY" secondItem="nbB-eY-iQN" secondAttribute="centerY" id="WVA-E4-EIr"/>
                                 </constraints>
                             </view>
