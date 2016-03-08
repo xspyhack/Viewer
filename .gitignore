@@ -18,3 +18,4 @@ DerivedData
 *.xcuerstate
 Pods/
 profile
+.DS_Store
