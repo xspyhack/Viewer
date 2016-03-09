@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         if segue.identifier == "showSource" {
             let navigationController = segue.destinationViewController as? UINavigationController
             let vc = navigationController?.topViewController as? SourceViewController
-            vc?.HTMLString = HTMLString
+            vc?.source = HTMLString
         } else if segue.identifier == "showSetting" {
         }
     }
@@ -283,8 +283,8 @@ extension ViewController: WKNavigationDelegate {
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
         actionItem.enabled = loadingImage
-        // Get the contents of html, <html>contents</html>
-        webView.evaluateJavaScript("document.all[0].innerHTML") { [weak self](results, error) -> Void in
+        // Get the contents of html
+        webView.evaluateJavaScript("document.documentElement.outerHTML") { [weak self](results, error) -> Void in
             self?.HTMLString = results as? String
             self?.sourceItem.enabled = true
             self?.stopLoading()

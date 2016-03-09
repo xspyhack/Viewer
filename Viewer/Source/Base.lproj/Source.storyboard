@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Source View Controller-->
@@ -17,32 +16,7 @@
                     <view key="view" contentMode="scaleToFill" id="dgO-Ma-3ks">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YZI-wi-0mf">
-                                <rect key="frame" x="8" y="0.0" width="584" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
-                            </textView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="YZI-wi-0mf" secondAttribute="trailing" constant="8" id="4mX-DE-2rK"/>
-                            <constraint firstItem="YZI-wi-0mf" firstAttribute="top" secondItem="QxJ-Xt-qK6" secondAttribute="bottom" id="9lJ-At-gp9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="YZI-wi-0mf" secondAttribute="trailing" id="EJf-nN-2ci"/>
-                            <constraint firstItem="zk1-r6-oSO" firstAttribute="top" secondItem="YZI-wi-0mf" secondAttribute="bottom" id="KJQ-jY-xhz"/>
-                            <constraint firstItem="YZI-wi-0mf" firstAttribute="leading" secondItem="dgO-Ma-3ks" secondAttribute="leadingMargin" id="PaB-rI-mgv"/>
-                            <constraint firstItem="YZI-wi-0mf" firstAttribute="leading" secondItem="dgO-Ma-3ks" secondAttribute="leading" constant="8" id="kdd-mT-b89"/>
-                            <constraint firstItem="YZI-wi-0mf" firstAttribute="top" secondItem="dgO-Ma-3ks" secondAttribute="top" id="qaz-ze-0LM"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="9lJ-At-gp9"/>
-                                <exclude reference="EJf-nN-2ci"/>
-                                <exclude reference="PaB-rI-mgv"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="nb6-pn-CXv">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="Ufh-4t-mkO">
@@ -51,9 +25,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="textView" destination="YZI-wi-0mf" id="9yk-Jc-ofn"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gvc-wR-kWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

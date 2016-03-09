@@ -14,6 +14,8 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // TODO: Choose syntax-highlight style
     }
 
     override func didReceiveMemoryWarning() {

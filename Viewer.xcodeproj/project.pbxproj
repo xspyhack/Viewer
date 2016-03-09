@@ -13,6 +13,10 @@
 		782F92A11C8D763800E3B326 /* RegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781915451C7C8976006987AE /* RegexHelper.swift */; };
 		782F92C81C8EACDD00E3B326 /* github.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 782F92C61C8EACDD00E3B326 /* github.min.css */; };
 		782F92D11C8EC6FD00E3B326 /* rainbow.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 782F92D01C8EC6FD00E3B326 /* rainbow.min.js */; };
+		782F92D71C8F0D8B00E3B326 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782F92D61C8F0D8B00E3B326 /* Parse.swift */; };
+		782F92DB1C8F226E00E3B326 /* github.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 782F92D91C8F226E00E3B326 /* github.min.css */; };
+		782F92DC1C8F226E00E3B326 /* highlight.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 782F92DA1C8F226E00E3B326 /* highlight.min.js */; };
+		782F92DE1C8FE00000E3B326 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782F92DD1C8FE00000E3B326 /* ThemeHelper.swift */; };
 		7835930F1C7C427200505B4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7835930D1C7C427200505B4C /* Main.storyboard */; };
 		783593111C7C427200505B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783593101C7C427200505B4C /* Assets.xcassets */; };
 		783593141C7C427200505B4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783593121C7C427200505B4C /* LaunchScreen.storyboard */; };
@@ -77,6 +81,10 @@
 		782F92761C86BCCF00E3B326 /* LogHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogHelper.swift; sourceTree = "<group>"; };
 		782F92C61C8EACDD00E3B326 /* github.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = github.min.css; sourceTree = "<group>"; };
 		782F92D01C8EC6FD00E3B326 /* rainbow.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = rainbow.min.js; sourceTree = "<group>"; };
+		782F92D61C8F0D8B00E3B326 /* Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
+		782F92D91C8F226E00E3B326 /* github.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = github.min.css; sourceTree = "<group>"; };
+		782F92DA1C8F226E00E3B326 /* highlight.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.min.js; sourceTree = "<group>"; };
+		782F92DD1C8FE00000E3B326 /* ThemeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		783593061C7C427200505B4C /* Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7835930E1C7C427200505B4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		783593101C7C427200505B4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,8 +163,19 @@
 				781915451C7C8976006987AE /* RegexHelper.swift */,
 				783F4CC51C7DB8EA00F8C7DF /* AppearanceManager.swift */,
 				782F92761C86BCCF00E3B326 /* LogHelper.swift */,
+				782F92D61C8F0D8B00E3B326 /* Parse.swift */,
+				782F92DD1C8FE00000E3B326 /* ThemeHelper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		782F92D81C8F226E00E3B326 /* highlight */ = {
+			isa = PBXGroup;
+			children = (
+				782F92D91C8F226E00E3B326 /* github.min.css */,
+				782F92DA1C8F226E00E3B326 /* highlight.min.js */,
+			);
+			path = highlight;
 			sourceTree = "<group>";
 		};
 		783592FD1C7C427200505B4C = {
@@ -188,6 +207,7 @@
 				783593211C7C51B400505B4C /* Source */,
 				7839FE271C7CC43100B504D7 /* Setting */,
 				781915411C7C837F006987AE /* Views */,
+				782F92D81C8F226E00E3B326 /* highlight */,
 				7835930D1C7C427200505B4C /* Main.storyboard */,
 				783593101C7C427200505B4C /* Assets.xcassets */,
 				783F4D441C7F6E7100F8C7DF /* Info.plist */,
@@ -371,9 +391,11 @@
 			files = (
 				7839FE1D1C7CBE9100B504D7 /* InfoPlist.strings in Resources */,
 				7839FE201C7CBEB700B504D7 /* Localizable.strings in Resources */,
+				782F92DB1C8F226E00E3B326 /* github.min.css in Resources */,
 				783593141C7C427200505B4C /* LaunchScreen.storyboard in Resources */,
 				783593111C7C427200505B4C /* Assets.xcassets in Resources */,
 				783F4D4C1C800F7600F8C7DF /* Source.storyboard in Resources */,
+				782F92DC1C8F226E00E3B326 /* highlight.min.js in Resources */,
 				7835930F1C7C427200505B4C /* Main.storyboard in Resources */,
 				783F4D461C800EDE00F8C7DF /* Setting.storyboard in Resources */,
 			);
@@ -410,12 +432,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				781915401C7C8375006987AE /* EdgesTextField.swift in Sources */,
+				782F92D71C8F0D8B00E3B326 /* Parse.swift in Sources */,
 				782F92771C86BCCF00E3B326 /* LogHelper.swift in Sources */,
 				783F4CC61C7DB8EA00F8C7DF /* AppearanceManager.swift in Sources */,
 				783F4CC21C7DA30800F8C7DF /* AppDelegate.swift in Sources */,
 				783F4CBD1C7D683100F8C7DF /* ResultsViewController.swift in Sources */,
 				783593201C7C519200505B4C /* SourceViewController.swift in Sources */,
 				781915461C7C8976006987AE /* RegexHelper.swift in Sources */,
+				782F92DE1C8FE00000E3B326 /* ThemeHelper.swift in Sources */,
 				783F4CC01C7DA2FD00F8C7DF /* ViewController.swift in Sources */,
 				7839FE291C7CC45A00B504D7 /* SettingViewController.swift in Sources */,
 			);
