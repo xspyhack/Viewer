@@ -9,40 +9,86 @@
 import Foundation
 
 struct ThemeHelper {
-    enum Style: String {
-        case Github = "github.min.css"
-        case Sublime = "monokai_sublime.min.css"
-        case SolarizedDark = "solarized-dark.min.css"
-        case SolarizedLight = "solarized-light.min.css"
-        case Xcode = "xcode.min.css"
-    }
     
     enum Script {
-        case Default(style: Style)
-        case Highlight(style: Style)
-        case Rainbow(style: Style)
+        enum Style: String {
+            case Github = "github.min.css"
+            case Sublime = "monokai-sublime.min.css"
+            case SolarizedDark = "solarized-dark.min.css"
+            case SolarizedLight = "solarized-light.min.css"
+            case Xcode = "xcode.min.css"
+            
+            var title: String {
+                switch self {
+                case .Github:
+                    return "GitHub"
+                case .Sublime:
+                    return "Sublime"
+                case .SolarizedDark:
+                    return "Solarized Dark"
+                case .SolarizedLight:
+                    return "Solarized Light"
+                case .Xcode:
+                    return "Xcode"
+                }
+            }
+            
+            static let allValues = [Github, Sublime, SolarizedDark, SolarizedLight, Xcode]
+        }
+        
+        case Default(Style)
+        case Highlight(Style)
+        case Rainbow(Style)
+        
+        static let allValues = [Default(.Github), Highlight(.Github), Rainbow(.Github)]
         
         var style: Style {
-            switch self {
-            case .Default(let style):
-                return style
-            case .Highlight(let style):
-                return style
-            case .Rainbow(let style):
-                return style
+            get {
+                switch self {
+                case .Default(let style):
+                    return style
+                case .Highlight(let style):
+                    return style
+                case .Rainbow(let style):
+                    return style
+                }
             }
         }
         
-        private static let host = "http://cdn.bootcss.com"
+        var title: String {
+            switch self {
+            case .Default:
+                return "Default"
+            case .Highlight:
+                return "Highlight"
+            case .Rainbow:
+                return "Rainbow"
+            }
+        }
+        
+        static func script(title: String) -> Script {
+            switch title {
+            case "Default":
+                return .Default(.Github)
+            case "Highlight":
+                return .Highlight(.Github)
+            case "Rainbow":
+                return .Rainbow(.Github)
+            default:
+                return .Default(.Github)
+            }
+        }
+        
+        private static let kHost = "http://cdn.bootcss.com"
         
         private var basePath: String {
             switch self {
             case .Default:
-                return Script.host + "/"
+                return Script.kHost + "/"
             case .Highlight:
-                return Script.host + "/highlight.js/9.2.0"
+                return Script.kHost + "/highlight.js/9.2.0"
             case .Rainbow:
-                return Script.host + "/rainbow/1.2.0"
+                return Script.kHost + "/rainbow/1.2.0"
             }
         }
         
@@ -85,6 +131,49 @@ struct ThemeHelper {
         }
     }
     
-    static let shareHelper = ThemeHelper()
-    var script: Script = .Default(style: .Github)
+    
+    private static let kStyleKey = "com.xspyhack.Style"
+    private static let kScriptKey = "com.xspyhack.Script"
+    
+    mutating func resetScript(title: String, _ style: Script.Style) {
+        switch title {
+        case "Default":
+            script = .Default(style)
+        case "Highlight":
+            script = .Highlight(style)
+        case "Rainbow":
+            script = .Rainbow(style)
+        default:
+            script = .Default(style)
+        }
+    }
+    
+    var script: Script = .Default(.Github)
+    
+    mutating func resetScript(script: Script, _ style: Script.Style) {
+        switch script {
+        case .Default:
+            self.script = .Default(style)
+        case .Highlight:
+            self.script = .Highlight(.SolarizedLight)
+        case .Rainbow:
+            self.script = .Rainbow(style)
+        }
+    }
+    
+    mutating func fetch() {
+        let scriptTitle = NSUserDefaults.standardUserDefaults().objectForKey(ThemeHelper.kScriptKey) as? String
+        let styleRawValue = NSUserDefaults.standardUserDefaults().objectForKey(ThemeHelper.kStyleKey) as? String
+        let style = Script.Style(rawValue: styleRawValue ?? "github.min.css") ?? .Github
+        resetScript(scriptTitle ?? "Default", style)
+        tv_print(script.title)
+        tv_print(script.style.rawValue)
+    }
+    
+    func synchronize() {
+        tv_print(script.title)
+        tv_print(script.style.rawValue)
+        NSUserDefaults.standardUserDefaults().setObject(script.title, forKey: ThemeHelper.kScriptKey)
+        NSUserDefaults.standardUserDefaults().setObject(script.style.rawValue, forKey: ThemeHelper.kStyleKey)
+    }
 }

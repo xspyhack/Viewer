@@ -22,6 +22,10 @@ class ViewController: UIViewController {
         return webView
     }()
     
+    lazy var presentationTransitionManager: PresentationTransitionManager = {
+        return PresentationTransitionManager()
+    }()
+    
     private var HTMLString: String?
 
     @IBOutlet private weak var outerButton: UIButton!
@@ -67,7 +71,15 @@ class ViewController: UIViewController {
             let vc = navigationController?.topViewController as? SourceViewController
             vc?.source = HTMLString
         } else if segue.identifier == "showSetting" {
+            let navigationController = segue.destinationViewController as? UINavigationController
+
+            navigationController?.modalPresentationStyle = .Custom
+            navigationController?.transitioningDelegate = presentationTransitionManager
         }
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     // MARK: - Event

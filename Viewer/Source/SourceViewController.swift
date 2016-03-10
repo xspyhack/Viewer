@@ -61,11 +61,17 @@ class SourceViewController: UIViewController {
         
         var head = "<head><meta charset=\"utf-8\"><title>The Viewer - View Source</title>"
         
-        Parse.HTMLEncode(&source)
-        Parse.highlighted(&source)
         
-        var themeHelper = ThemeHelper.shareHelper
-        themeHelper.script = .Highlight(style: .Github)
+        var themeHelper = ThemeHelper()
+        themeHelper.fetch()
+        
+        if case .Rainbow = themeHelper.script {
+            //
+        } else {
+            Parse.HTMLEncode(&source)
+            Parse.highlighted(&source)
+        }
+        
         if case .Default = themeHelper.script {
             head += "<script src=\"highlight.min.js\"></script>"
             head += "<script>hljs.initHighlightingOnLoad();</script>"
