@@ -1,6 +1,6 @@
 ### Viewer - View the real
 
-Viewer is a simple tool to view web page source code.
+Viewer is a simple tool to view web page source code with Syntax-Highlighted.
 
 ##### You can view web page source code with the following ways:
 
@@ -16,11 +16,10 @@ Copy a picture’s Share URL in Instagram, and switch to Viewer App. After finis
 
 ##### Todo
 
-+ Syntax-Highlighted
++ Search with Syntax-Highlighted
 
 Thanks for [@lxxi Chai](https://github.com/chaiyixiao) who translated this docs to English.
 
 ##### Acknowledgements / Credits
 
-- The Actoin Extension Syntax-Highlighting engine being used is [Rainbow.js](https://github.com/ccampbell/rainbow)
-
+- The Syntax-Highlighting engine being used is [Rainbow.js](https://github.com/ccampbell/rainbow) & [Highlight.js](https://github.com/isagalaev/highlight.js)
