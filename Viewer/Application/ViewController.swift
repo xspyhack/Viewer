@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         webView.scrollView.showsVerticalScrollIndicator = false
         webView.scrollView.showsHorizontalScrollIndicator =  false
         webView.backgroundColor = UIColor.whiteColor()
+        webView.hidden = true
         
         return webView
     }()
@@ -102,6 +103,18 @@ class ViewController: UIViewController {
         stopLoading()
         let activityViewController = UIActivityViewController(activityItems: [shareImage!], applicationActivities: nil)
         presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func handleSwipeUp(sender: UISwipeGestureRecognizer) {
+        setSettingViewHidden(false, animated: true)
+    }
+
+    @IBAction func handleSwipDown(sender: UISwipeGestureRecognizer) {
+        setSettingViewHidden(true, animated: true)
+    }
+    
+    @IBAction func handleLongPress(sender: UILongPressGestureRecognizer) {
+        setSettingViewHidden(false, animated: true)
     }
     
     @objc private func handleApplicationDidBecomeActive(notification: NSNotification) {
@@ -228,11 +241,7 @@ class ViewController: UIViewController {
     private let innerRotationAnimKey = "inner.rotation.z"
     
     private func startLoading() {
-        loadingBottom.constant = 25.0
-        
-        UIView.animateWithDuration(0.5) { () -> Void in
-            self.view.layoutIfNeeded()
-        }
+        setSettingViewHidden(false, animated: true)
         
         let innerAnim = CABasicAnimation(keyPath: "transform.rotation.z")
         innerAnim.duration = 0.5
@@ -250,16 +259,30 @@ class ViewController: UIViewController {
     }
     
     private func stopLoading() {
-        loadingBottom.constant = -50.0
         
-        UIView.animateWithDuration(0.5) { () -> Void in
-            self.view.layoutIfNeeded()
-        }
+        setSettingViewHidden(true, animated: true)
+        
         UIView.animateWithDuration(0.5, animations: { () -> Void in
             self.view.layoutIfNeeded()
             }) { (finished) -> Void in
                 self.innerButton.layer.removeAnimationForKey(self.innerRotationAnimKey)
                 self.outerButton.layer.removeAnimationForKey(self.outerRotationAnimKey)
+        }
+    }
+    
+    private func setSettingViewHidden(flag: Bool, animated: Bool) {
+        if flag {
+            loadingBottom.constant = -50
+        } else {
+            loadingBottom.constant = 25.0
+        }
+        
+        if animated {
+            UIView.animateWithDuration(0.5) { () -> Void in
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            self.view.layoutIfNeeded()
         }
     }
 }
@@ -288,6 +311,7 @@ extension ViewController: UITextFieldDelegate {
 extension ViewController: WKNavigationDelegate {
     
     func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        webView.hidden = false
     }
     
     func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {

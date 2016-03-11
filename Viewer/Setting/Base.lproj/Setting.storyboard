@@ -101,7 +101,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ScriptTableViewCellIdentifier" textLabel="53W-qF-EeA" style="IBUITableViewCellStyleDefault" id="aV0-hg-IeS">
-                                        <rect key="frame" x="0.0" y="93.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aV0-hg-IeS" id="fr7-vB-80p">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -133,7 +133,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Whm-cb-1CT"/>
-                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="x9P-Po-11C" id="x4G-Dh-JhM"/>
                         <segue destination="SNZ-Zs-rod" kind="show" identifier="showStyle" id="iJB-gO-Y7F"/>
@@ -160,7 +159,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StyleTableViewCellIdentifier" textLabel="VNH-g4-eN4" style="IBUITableViewCellStyleDefault" id="wdD-62-mW4">
-                                        <rect key="frame" x="0.0" y="93.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wdD-62-mW4" id="WQg-LR-mQw">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -191,7 +190,6 @@
                             <constraint firstItem="5U6-TC-q4d" firstAttribute="top" secondItem="Nku-0i-nAF" secondAttribute="top" id="eId-KT-EhH"/>
                         </constraints>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="5U6-TC-q4d" id="Mmh-ju-Y6j"/>
                     </connections>

@@ -43,8 +43,6 @@ Action.prototype = {
         // Append to document
         document.head.appendChild(script);
         document.head.appendChild(style);
-        
-        alert(document)
     }
 };
     

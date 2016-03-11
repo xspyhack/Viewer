@@ -31,7 +31,6 @@
 		783F4CF31C7E153200F8C7DF /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F4CF21C7E153200F8C7DF /* ActionRequestHandler.swift */; };
 		783F4CF51C7E153200F8C7DF /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 783F4CF41C7E153200F8C7DF /* Action.js */; };
 		783F4CF91C7E153200F8C7DF /* ViewerActionExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 783F4CF01C7E153200F8C7DF /* ViewerActionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		783F4CFD1C7E1C9E00F8C7DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783593101C7C427200505B4C /* Assets.xcassets */; };
 		783F4D051C7EAA7F00F8C7DF /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F4D041C7EAA7F00F8C7DF /* ShareViewController.swift */; };
 		783F4D081C7EAA7F00F8C7DF /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783F4D061C7EAA7F00F8C7DF /* MainInterface.storyboard */; };
 		783F4D0C1C7EAA7F00F8C7DF /* ViewerShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 783F4D021C7EAA7F00F8C7DF /* ViewerShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -43,6 +42,7 @@
 		783F4D4C1C800F7600F8C7DF /* Source.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783F4D4E1C800F7600F8C7DF /* Source.storyboard */; };
 		78AE9B081C911CDD003ABE56 /* StyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AE9B071C911CDD003ABE56 /* StyleViewController.swift */; };
 		78AE9B0C1C91446B003ABE56 /* Uitls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AE9B0B1C91446B003ABE56 /* Uitls.swift */; };
+		78CD74201C92676800D3BE18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783593101C7C427200505B4C /* Assets.xcassets */; };
 		78F7C0D71C90570A00CCBB7B /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F7C0D61C90570A00CCBB7B /* ThemeViewController.swift */; };
 		78F7C0D91C905AB300CCBB7B /* PresentationTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F7C0D81C905AB300CCBB7B /* PresentationTransitionManager.swift */; };
 		78F7C0DB1C905D6B00CCBB7B /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F7C0DA1C905D6B00CCBB7B /* PresentationController.swift */; };
@@ -420,7 +420,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783F4CFD1C7E1C9E00F8C7DF /* Assets.xcassets in Resources */,
 				782F92C81C8EACDD00E3B326 /* github.min.css in Resources */,
 				783F4D3C1C7F5AFB00F8C7DF /* InfoPlist.strings in Resources */,
 				782F92D11C8EC6FD00E3B326 /* rainbow.min.js in Resources */,
@@ -435,6 +434,7 @@
 			files = (
 				783F4D331C7F04EA00F8C7DF /* ShareAssets.xcassets in Resources */,
 				783F4D361C7F12D200F8C7DF /* InfoPlist.strings in Resources */,
+				78CD74201C92676800D3BE18 /* Assets.xcassets in Resources */,
 				783F4D081C7EAA7F00F8C7DF /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -725,6 +725,7 @@
 		783F4D0E1C7EAA7F00F8C7DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ViewerShareExtension/ViewerShareExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -741,6 +742,7 @@
 		783F4D0F1C7EAA7F00F8C7DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ViewerShareExtension/ViewerShareExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

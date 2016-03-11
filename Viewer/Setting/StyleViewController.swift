@@ -56,6 +56,7 @@ class StyleViewController: UIViewController {
             URLString = "https://github.com/ccampbell/rainbow"
         }
         let safariController = SFSafariViewController(URL: NSURL(string: URLString)!)
+        safariController.delegate = self
         presentViewController(safariController, animated: true, completion: nil)
     }
     
@@ -137,5 +138,12 @@ extension StyleViewController: UITableViewDelegate {
         selectingCell?.accessoryType = .Checkmark
 
         selectedIndexPath = indexPath
+    }
+}
+
+extension StyleViewController: SFSafariViewControllerDelegate {
+    
+    func safariViewControllerDidFinish(controller: SFSafariViewController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
