@@ -93,7 +93,7 @@ extension StyleViewController: UITableViewDataSource {
             cell.textLabel?.text = "License"
             cell.accessoryType = .DisclosureIndicator
         } else {
-            cell.textLabel?.text = stylesArray[indexPath.row].title
+            cell.textLabel?.text = stylesArray[indexPath.row].name
         }
 
         return cell

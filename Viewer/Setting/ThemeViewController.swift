@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ThemeViewController: UIViewController {
+class ThemeViewController: UIViewController, SegueHandlerType {
 
+    enum SegueIdentifier: String {
+        case ShowStyle = "showStyle"
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     private lazy var scriptsArray: [ThemeHelper.Script] = {
@@ -36,7 +40,8 @@ class ThemeViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == "showStyle" {
+        switch segueIdentifierForSegue(segue) {
+        case .ShowStyle:
             let viewController = segue.destinationViewController as! StyleViewController
             if let indexPath = sender as? NSIndexPath {
                 viewController.script = scriptsArray[indexPath.row]
@@ -57,7 +62,7 @@ extension ThemeViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ScriptTableViewCellIdentifier", forIndexPath: indexPath)
-        cell.textLabel?.text = scriptsArray[indexPath.row].title
+        cell.textLabel?.text = scriptsArray[indexPath.row].name
         return cell
     }
 }
@@ -74,7 +79,7 @@ extension ThemeViewController: UITableViewDelegate {
         }
         
         // Segue between two view controllers, not cell <-> view controller
-        performSegueWithIdentifier("showStyle", sender: indexPath)
+        performSegueWithIdentifier(SegueIdentifier.ShowStyle, sender: indexPath)
     }
     
     func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {

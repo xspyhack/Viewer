@@ -41,8 +41,8 @@
 		783F4D461C800EDE00F8C7DF /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783F4D481C800EDE00F8C7DF /* Setting.storyboard */; };
 		783F4D4C1C800F7600F8C7DF /* Source.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783F4D4E1C800F7600F8C7DF /* Source.storyboard */; };
 		78AE9B081C911CDD003ABE56 /* StyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AE9B071C911CDD003ABE56 /* StyleViewController.swift */; };
-		78AE9B0C1C91446B003ABE56 /* Uitls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AE9B0B1C91446B003ABE56 /* Uitls.swift */; };
 		78CD74201C92676800D3BE18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783593101C7C427200505B4C /* Assets.xcassets */; };
+		78CD74221C92B46300D3BE18 /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CD74211C92B46300D3BE18 /* SegueHandlerType.swift */; };
 		78F7C0D71C90570A00CCBB7B /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F7C0D61C90570A00CCBB7B /* ThemeViewController.swift */; };
 		78F7C0D91C905AB300CCBB7B /* PresentationTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F7C0D81C905AB300CCBB7B /* PresentationTransitionManager.swift */; };
 		78F7C0DB1C905D6B00CCBB7B /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F7C0DA1C905D6B00CCBB7B /* PresentationController.swift */; };
@@ -128,7 +128,7 @@
 		783F4D4D1C800F7600F8C7DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Source.storyboard; sourceTree = "<group>"; };
 		783F4D501C800F7800F8C7DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Source.strings"; sourceTree = "<group>"; };
 		78AE9B071C911CDD003ABE56 /* StyleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleViewController.swift; sourceTree = "<group>"; };
-		78AE9B0B1C91446B003ABE56 /* Uitls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uitls.swift; sourceTree = "<group>"; };
+		78CD74211C92B46300D3BE18 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
 		78F7C0D61C90570A00CCBB7B /* ThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		78F7C0D81C905AB300CCBB7B /* PresentationTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationTransitionManager.swift; sourceTree = "<group>"; };
 		78F7C0DA1C905D6B00CCBB7B /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 				782F92761C86BCCF00E3B326 /* LogHelper.swift */,
 				782F92D61C8F0D8B00E3B326 /* Parse.swift */,
 				782F92DD1C8FE00000E3B326 /* ThemeHelper.swift */,
-				78AE9B0B1C91446B003ABE56 /* Uitls.swift */,
+				78CD74211C92B46300D3BE18 /* SegueHandlerType.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -453,7 +453,6 @@
 				783F4CC21C7DA30800F8C7DF /* AppDelegate.swift in Sources */,
 				783F4CBD1C7D683100F8C7DF /* ResultsViewController.swift in Sources */,
 				78F7C0D71C90570A00CCBB7B /* ThemeViewController.swift in Sources */,
-				78AE9B0C1C91446B003ABE56 /* Uitls.swift in Sources */,
 				783593201C7C519200505B4C /* SourceViewController.swift in Sources */,
 				781915461C7C8976006987AE /* RegexHelper.swift in Sources */,
 				78F7C0DB1C905D6B00CCBB7B /* PresentationController.swift in Sources */,
@@ -461,6 +460,7 @@
 				782F92DE1C8FE00000E3B326 /* ThemeHelper.swift in Sources */,
 				78AE9B081C911CDD003ABE56 /* StyleViewController.swift in Sources */,
 				783F4CC01C7DA2FD00F8C7DF /* ViewController.swift in Sources */,
+				78CD74221C92B46300D3BE18 /* SegueHandlerType.swift in Sources */,
 				7839FE291C7CC45A00B504D7 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,6 +674,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Viewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xspyhack.Viewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -690,6 +691,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Viewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xspyhack.Viewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

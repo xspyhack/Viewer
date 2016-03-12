@@ -9,16 +9,17 @@
 import Foundation
 
 struct ThemeHelper {
-    
-    enum Script {
-        enum Style: String {
+
+    enum Script: NameRepresentable, Iterable {
+        
+        enum Style: String, NameRepresentable, Iterable {
             case Github = "github.min.css"
             case Sublime = "monokai-sublime.min.css"
             case SolarizedDark = "solarized-dark.min.css"
             case SolarizedLight = "solarized-light.min.css"
             case Xcode = "xcode.min.css"
             
-            var title: String {
+            var name: String {
                 switch self {
                 case .Github:
                     return "GitHub"
@@ -55,7 +56,7 @@ struct ThemeHelper {
             }
         }
         
-        var title: String {
+        var name: String {
             switch self {
             case .Default:
                 return "Default"
@@ -65,9 +66,9 @@ struct ThemeHelper {
                 return "Rainbow"
             }
         }
-        
-        static func script(title: String) -> Script {
-            switch title {
+
+        static func script(name: String) -> Script {
+            switch name {
             case "Default":
                 return .Default(.Github)
             case "Highlight":
@@ -135,8 +136,8 @@ struct ThemeHelper {
     private static let kStyleKey = "com.xspyhack.Style"
     private static let kScriptKey = "com.xspyhack.Script"
     
-    mutating func resetScript(title: String, _ style: Script.Style) {
-        switch title {
+    mutating func resetScript(name: String, _ style: Script.Style) {
+        switch name {
         case "Default":
             script = .Default(style)
         case "Highlight":
@@ -162,18 +163,29 @@ struct ThemeHelper {
     }
     
     mutating func fetch() {
-        let scriptTitle = NSUserDefaults.standardUserDefaults().objectForKey(ThemeHelper.kScriptKey) as? String
+        let scriptName = NSUserDefaults.standardUserDefaults().objectForKey(ThemeHelper.kScriptKey) as? String
         let styleRawValue = NSUserDefaults.standardUserDefaults().objectForKey(ThemeHelper.kStyleKey) as? String
         let style = Script.Style(rawValue: styleRawValue ?? "github.min.css") ?? .Github
-        resetScript(scriptTitle ?? "Default", style)
-        tv_print(script.title)
+        resetScript(scriptName ?? "Default", style)
+        tv_print(script.name)
         tv_print(script.style.rawValue)
     }
     
     func synchronize() {
-        tv_print(script.title)
-        tv_print(script.style.rawValue)
-        NSUserDefaults.standardUserDefaults().setObject(script.title, forKey: ThemeHelper.kScriptKey)
         NSUserDefaults.standardUserDefaults().setObject(script.style.rawValue, forKey: ThemeHelper.kStyleKey)
+        NSUserDefaults.standardUserDefaults().setObject(script.name, forKey: ThemeHelper.kScriptKey)
+        tv_print(script.name)
+        tv_print(script.style.rawValue)
     }
 }
+
+protocol Iterable {
+    static var allValues: [Self] { get }
+}
+
+protocol NameRepresentable {
+    var name: String { get }
+}
+
+extension NameRepresentable { }
+
