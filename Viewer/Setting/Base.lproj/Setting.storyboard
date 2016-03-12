@@ -78,11 +78,55 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Evo-Be-VAW" kind="show" identifier="showTheme" id="jhH-mf-sJi"/>
+                        <segue destination="Efg-VD-Qtx" kind="show" identifier="showHelp" id="4mM-GT-z83"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BuF-4H-CxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="891" y="119"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="3AG-xW-kdb">
+            <objects>
+                <viewController id="Efg-VD-Qtx" customClass="HelpViewController" customModule="Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nuq-Lu-UJe"/>
+                        <viewControllerLayoutGuide type="bottom" id="85M-Kn-l7x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YvH-KQ-Q2L">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctl-ip-oHD">
+                                <rect key="frame" x="300.5" y="187" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ctl-ip-oHD" firstAttribute="top" secondItem="YvH-KQ-Q2L" secondAttribute="top" constant="187" id="56E-vn-iZY"/>
+                            <constraint firstItem="Ctl-ip-oHD" firstAttribute="centerX" secondItem="YvH-KQ-Q2L" secondAttribute="centerX" id="GIz-ck-Cqq"/>
+                            <constraint firstItem="Ctl-ip-oHD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YvH-KQ-Q2L" secondAttribute="leading" constant="33" id="ULG-kQ-QYi"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ctl-ip-oHD" secondAttribute="trailing" constant="33" id="VGk-ZP-jm3"/>
+                            <constraint firstItem="Ctl-ip-oHD" firstAttribute="centerX" secondItem="YvH-KQ-Q2L" secondAttribute="centerX" id="dw2-Hb-6OV"/>
+                            <constraint firstItem="Ctl-ip-oHD" firstAttribute="centerY" secondItem="YvH-KQ-Q2L" secondAttribute="centerY" id="tco-4C-ufE"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GIz-ck-Cqq"/>
+                                <exclude reference="tco-4C-ufE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="Ctl-ip-oHD" id="JRC-A6-ePl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7c7-gq-Dgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="891" y="856"/>
         </scene>
         <!--Theme View Controller-->
         <scene sceneID="FwA-xq-XIf">

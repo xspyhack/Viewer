@@ -17,6 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips: Would you want to swipe up on this screen?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2Q-Z5-oFQ">
+                                <rect key="frame" x="112" y="187" width="376" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9S-D3-TeG">
                                 <rect key="frame" x="275" y="600" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,15 +50,25 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Z2Q-Z5-oFQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="66" id="BKv-eD-E9L"/>
                             <constraint firstItem="7BO-sn-Woh" firstAttribute="centerX" secondItem="G9S-D3-TeG" secondAttribute="centerX" id="J13-nH-67T"/>
+                            <constraint firstItem="Z2Q-Z5-oFQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OsE-LM-fNc"/>
                             <constraint firstItem="Nhl-NO-SBc" firstAttribute="centerX" secondItem="7BO-sn-Woh" secondAttribute="centerX" id="QGC-Kh-haq"/>
                             <constraint firstItem="Nhl-NO-SBc" firstAttribute="width" secondItem="7BO-sn-Woh" secondAttribute="width" id="TJL-Rh-01f"/>
                             <constraint firstItem="Nhl-NO-SBc" firstAttribute="centerY" secondItem="7BO-sn-Woh" secondAttribute="centerY" id="W6w-7W-1oL"/>
                             <constraint firstItem="G9S-D3-TeG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="csO-e6-2D5"/>
+                            <constraint firstItem="Z2Q-Z5-oFQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="123" id="mUn-Ga-qpQ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="G9S-D3-TeG" secondAttribute="bottom" constant="-50" id="ozQ-iv-sxK"/>
+                            <constraint firstItem="Z2Q-Z5-oFQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="187" id="qaL-tV-bdp"/>
                             <constraint firstItem="7BO-sn-Woh" firstAttribute="centerY" secondItem="G9S-D3-TeG" secondAttribute="centerY" id="wyq-XQ-Xaz"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Z2Q-Z5-oFQ" secondAttribute="trailing" constant="66" id="xZe-Mx-J5s"/>
                             <constraint firstItem="Nhl-NO-SBc" firstAttribute="height" secondItem="7BO-sn-Woh" secondAttribute="height" id="xs0-Yo-Ai5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="mUn-Ga-qpQ"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="S3f-lg-i2X" appends="YES" id="6eU-Ja-Vrs"/>
                             <outletCollection property="gestureRecognizers" destination="z8h-gi-HJ7" appends="YES" id="vSt-H0-1Fx"/>
@@ -87,6 +103,7 @@
                         <outlet property="backgroundView" destination="G9S-D3-TeG" id="QEf-hU-FSh"/>
                         <outlet property="innerButton" destination="7BO-sn-Woh" id="dfR-TG-Wjq"/>
                         <outlet property="loadingBottom" destination="ozQ-iv-sxK" id="A68-2Q-iK2"/>
+                        <outlet property="messageLabel" destination="Z2Q-Z5-oFQ" id="cUZ-hz-ABi"/>
                         <outlet property="outerButton" destination="Nhl-NO-SBc" id="mBv-lM-AEt"/>
                         <outlet property="sourceItem" destination="FjB-8D-tPK" id="xqn-k5-oTY"/>
                         <outlet property="textField" destination="czM-Ao-YZF" id="CDq-0d-riI"/>

@@ -8,8 +8,13 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+class SettingViewController: UIViewController, SegueHandlerType {
     
+    enum SegueIdentifier: String {
+        case ShowTheme = "showTheme"
+        case ShowHelp = "showHelp"
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,7 +56,7 @@ extension SettingViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -60,6 +65,8 @@ extension SettingViewController: UITableViewDataSource {
         case 0:
             cell.textLabel?.text = "Theme"
         case 1:
+            cell.textLabel?.text = "Help"
+        case 2:
             cell.textLabel?.text = "Sponsorship Developer"
         default:
             break
@@ -82,8 +89,10 @@ extension SettingViewController: UITableViewDelegate {
         switch indexPath.row {
         case 0:
             // Segue between two view controllers, not cell <-> view controller
-            performSegueWithIdentifier("showTheme", sender: indexPath)
+            performSegueWithIdentifier(SegueIdentifier.ShowTheme, sender: indexPath)
         case 1:
+            performSegueWithIdentifier(SegueIdentifier.ShowHelp, sender: indexPath)
+        case 2:
             sponsorship()
         default:
             break

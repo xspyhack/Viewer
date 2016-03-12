@@ -109,13 +109,13 @@ struct ThemeHelper {
             case .Default:
                 return ""
             case .Highlight:
-                return "<script>hljs.initHighlightingOnLoad();</script>\n"
+                return "<script>hljs.initHighlightingOnLoad();</script>"
             case .Rainbow:
                 //return "<script>Rainbow.color();</script>\n"
-                let html = "<script src=\"" + basePath + "/js/language/html.min.js\"></script>\n"
-                let javascript = "<script src=\"" + basePath + "/js/language/javascript.min.js\"></script>\n"
-                let css = "<script src=\"" + basePath + "/js/language/css.min.js\"></script>\n"
-                let generic = "<script src=\"" + basePath + "/js/language/generic.min.js\"></script>\n"
+                let html = "<script src=\"" + basePath + "/js/language/html.min.js\"></script>"
+                let javascript = "<script src=\"" + basePath + "/js/language/javascript.min.js\"></script>"
+                let css = "<script src=\"" + basePath + "/js/language/css.min.js\"></script>"
+                let generic = "<script src=\"" + basePath + "/js/language/generic.min.js\"></script>"
                 return html + javascript + css + generic
             }
         }
@@ -156,7 +156,7 @@ struct ThemeHelper {
         case .Default:
             self.script = .Default(style)
         case .Highlight:
-            self.script = .Highlight(.SolarizedLight)
+            self.script = .Highlight(style)
         case .Rainbow:
             self.script = .Rainbow(style)
         }

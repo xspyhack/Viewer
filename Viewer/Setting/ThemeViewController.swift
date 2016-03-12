@@ -85,4 +85,8 @@ extension ThemeViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
+    
+    func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "If you selected theme(style) doesn't work well for some web page, maybe you need to try with anothers theme(style)."
+    }
 }

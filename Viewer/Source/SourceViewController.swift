@@ -69,7 +69,7 @@ class SourceViewController: UIViewController {
             //
         } else {
             Parse.HTMLEncode(&source)
-            Parse.highlighted(&source)
+            // Parse.highlighted(&source) // BUG
         }
         
         if case .Default = themeHelper.script {
@@ -77,14 +77,14 @@ class SourceViewController: UIViewController {
             head += "<script>hljs.initHighlightingOnLoad();</script>"
             head += "<link href=\"github.min.css\" rel=\"stylesheet\">"
         } else {
-            head += "<link href=\"" + themeHelper.script.stylePath + themeHelper.script.style.rawValue + "\" rel=\"stylesheet\">"
+            head += "<link href=\"" + themeHelper.script.stylePath + themeHelper.script.style.rawValue + "\" rel=\"stylesheet\" />"
             head += "<script src=\"" + themeHelper.script.scriptPath + "\"></script>"
             head += themeHelper.script.runScript
         }
 
         head += "</head>"
         
-        let body = "<body style=\"width:100%;word-wrap:break-word;\"><pre><code class=\"html\" data-language=\"html\" style=\"font-size: 23px;\">"
+        let body = "<body style=\"width:100%;word-wrap:break-word;\"><pre><code class=\"html\" data-language=\"html\" style=\"font-size: 13px;\">"
         let foot = "</code></pre></body></html>"
         
         HTMLString = document + head + body + source + foot
@@ -92,7 +92,7 @@ class SourceViewController: UIViewController {
 
     private func setupSearchController() {
         let resultsViewController = storyboard?.instantiateViewControllerWithIdentifier("ResultsViewController") as! ResultsViewController
-        resultsViewController.allResults = HTMLString
+        resultsViewController.allResults = source
         
         // Create the search controller and make it perform the results updating.
         searchController = UISearchController(searchResultsController: resultsViewController)

@@ -29,6 +29,19 @@ struct Parse {
         highlightSrc(&string)
     }
     
+    static func captureImageURLString(string: String) -> String? {
+        let pattern = "(?<=\"og:image\" content=\")(https://.+.(jpg|png))"
+        let matcher: RegexHelper
+        do {
+            matcher = try RegexHelper(pattern)
+        } catch {
+            tv_print(error)
+            return nil
+        }
+        
+        return matcher.firstCapture(string)
+    }
+    
     static func highlightHref(inout string: String) {
         let pattern = "(?<=href=[\'\"]?)([^\'\"]+).*?(?=[\'\"])"
         let matcher: RegexHelper
@@ -48,6 +61,7 @@ struct Parse {
         
         for href in hrefs {
             let newHref = "<a href=\"" + href + "\" target=\"_blank\">" + href + "</a>"
+            // BUG: if `href` == `html tag`, then it will replace with newHref
             string = (string as NSString).stringByReplacingOccurrencesOfString(href, withString: newHref)
         }
     }
