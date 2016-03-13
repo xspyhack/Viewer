@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class HelpViewController: UIViewController {
 
@@ -17,7 +18,7 @@ class HelpViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        messageLabel.text = "If you can't get syntax-hightlighted source code of some web page in Safari, you can view in App.\n:D"
+        messageLabel.text = NSLocalizedString("If you can't get syntax-highlighted source code of some web page in Safari, you can view in App.\n:D", comment: "")
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +26,28 @@ class HelpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func mailToMe(sender: AnyObject) {
+        let appVersion = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"]
+        let appBuild = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"]
+        let systemName = UIDevice.currentDevice().systemName
+        let systemVersion = UIDevice.currentDevice().systemVersion
+        
+        sendMailToRecipients(["xspyhack@gmail.com"], ccRecipients:[""], withSubject: NSLocalizedString("The Viewer Feeds", comment: "") + " - v\(appVersion ?? "unknow") (\(appBuild ?? "unknow")) (\(systemName) \(systemVersion))")
+    }
+    
+    private func sendMailToRecipients(recipients: [String], ccRecipients: [String], withSubject subject: String) {
+        if MFMailComposeViewController.canSendMail() {
+            let mailComposeViewController = MFMailComposeViewController()
+            mailComposeViewController.setToRecipients(recipients)
+            mailComposeViewController.setCcRecipients(ccRecipients)
+            mailComposeViewController.setSubject(subject)
+            mailComposeViewController.mailComposeDelegate = self
+            
+            presentViewController(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            tv_print("This device can't send mail.")
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -37,3 +60,24 @@ class HelpViewController: UIViewController {
     */
 
 }
+
+// MARK: - MFMailComposeViewControllerDelegate
+
+extension HelpViewController: MFMailComposeViewControllerDelegate {
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        switch result {
+        case MFMailComposeResultSent:
+            tv_print("sent")
+        case MFMailComposeResultFailed:
+            tv_print("fail: " + error.debugDescription)
+        case MFMailComposeResultCancelled:
+            tv_print("canceled")
+        default:
+            break
+        }
+        
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+

@@ -8,6 +8,14 @@
 
 "Search" = "搜索";
 "Sponsorship Developer" = "捐助开发者";
+"> Technology is innocent.\n\nv1.0.2" = "> 技术本身是无罪的。\n\nv1.0.2";
 "The Viewer can't open the page because the server can't be found." = "天眼打不开该网页，因为找不到服务器。";
+"Tips: Would you want to swipe up on this screen?" = "提示：在当前屏幕往上滑，你会发现惊喜。";
 "If you selected theme(style) doesn't work well for some web page, maybe you need to try with anothers theme(style)." = "如果对于某些网页，你使用某一个主题（样式）没有代码高亮的效果，那么你或许应该尝试一下其他主题。";
-"If you can't get syntax-hightlighted source code of some web page in Safari, you can view in App.\n:D" = "如果在Safari中，某些网页你无法得到代码高亮的网页源码，你可以在App中来查看。\n :D";
+"If you can't get syntax-highlighted source code of some web page in Safari, you can view in App.\n:D" = "如果在Safari中，某些网页你无法得到代码高亮的网页源码，你可以在应用中来查看。\n :D";
+"Mail To Developer" = "发邮件给开发者";
+"The Viewer Feeds" = "天眼反馈";
+"License" = "协议/许可证";
+"Theme" = "主题";
+"Style" = "样式";
+"Help" = "帮助";

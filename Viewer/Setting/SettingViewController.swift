@@ -63,11 +63,11 @@ extension SettingViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("SettingTableViewCellIdentifier", forIndexPath: indexPath)
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = "Theme"
+            cell.textLabel?.text = NSLocalizedString("Theme", comment: "")
         case 1:
-            cell.textLabel?.text = "Help"
+            cell.textLabel?.text = NSLocalizedString("Help", comment: "")
         case 2:
-            cell.textLabel?.text = "Sponsorship Developer"
+            cell.textLabel?.text = NSLocalizedString("Sponsorship Developer", comment: "")
         default:
             break
         }
@@ -106,7 +106,7 @@ extension SettingViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerLabel = UILabel()
         footerLabel.numberOfLines = 0
-        footerLabel.text = "> Technology is innocent.\n\nv1.0.2"
+        footerLabel.text = NSLocalizedString("> Technology is innocent.\n\nv1.0.2", comment: "")
         footerLabel.font = UIFont.systemFontOfSize(12)
         footerLabel.textAlignment = .Center
         footerLabel.textColor = UIColor(red: 23 / 255.0, green: 87 / 255.0, blue: 134 / 255.0, alpha: 1.0)

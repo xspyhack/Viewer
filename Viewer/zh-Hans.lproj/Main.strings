@@ -2,5 +2,8 @@
 /* Class = "UIBarButtonItem"; title = "</>"; ObjectID = "FjB-8D-tPK"; */
 "FjB-8D-tPK.title" = "</>";
 
-/* Class = "UITextField"; placeholder = "Enter website name"; ObjectID = "czM-Ao-YZF"; */
+/* Class = "UILabel"; text = "Tips: Would you want to swipe up on this screen?"; ObjectID = "Z2Q-Z5-oFQ"; */
+"Z2Q-Z5-oFQ.text" = "提示：在当前屏幕往上滑，你会发现惊喜。";
+
+/* Class = "UITextField"; placeholder = "输入URL"; ObjectID = "czM-Ao-YZF"; */
 "czM-Ao-YZF.placeholder" = "输入URL";

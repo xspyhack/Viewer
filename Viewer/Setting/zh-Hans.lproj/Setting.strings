@@ -1,9 +1,21 @@
 
-/* Class = "UINavigationItem"; title = "Setting"; ObjectID = "KnK-YU-vcB"; */
+/* Class = "UILabel"; text = "Title"; ObjectID = "53W-qF-EeA"; */
+"53W-qF-EeA.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "设置"; ObjectID = "KnK-YU-vcB"; */
 "KnK-YU-vcB.title" = "设置";
 
-/* Class = "UILabel"; text = "> Technology is innocent."; ObjectID = "hbs-J6-mYz"; */
+/* Class = "UILabel"; text = "Title"; ObjectID = "VNH-g4-eN4"; */
+"VNH-g4-eN4.text" = "Title";
+
+/* Class = "UILabel"; text = "> 技术本身是无罪的。"; ObjectID = "hbs-J6-mYz"; */
 "hbs-J6-mYz.text" = "> 技术本身是无罪的。";
 
 /* Class = "UILabel"; text = "v1.0"; ObjectID = "iRc-JN-TiZ"; */
 "iRc-JN-TiZ.text" = "v1.0";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "vRP-jd-Z78"; */
+"vRP-jd-Z78.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Mail To Developer"; ObjectID = "yOX-gS-AkI"; */
+"yOX-gS-AkI.normalTitle" = "📧 发邮件给开发者";

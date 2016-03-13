@@ -97,7 +97,6 @@
 		783593101C7C427200505B4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		783593131C7C427200505B4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7835931F1C7C519200505B4C /* SourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
-		7839FE1B1C7CBE8300B504D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		7839FE1C1C7CBE8300B504D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		7839FE1E1C7CBE9100B504D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7839FE211C7CBEB700B504D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -126,11 +125,12 @@
 		783F4D401C7F682300F8C7DF /* ActionAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ActionAssets.xcassets; sourceTree = "<group>"; };
 		783F4D441C7F6E7100F8C7DF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		783F4D491C800F2D00F8C7DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Setting.storyboard; sourceTree = "<group>"; };
-		783F4D4B1C800F5400F8C7DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Setting.strings"; sourceTree = "<group>"; };
 		783F4D4D1C800F7600F8C7DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Source.storyboard; sourceTree = "<group>"; };
 		783F4D501C800F7800F8C7DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Source.strings"; sourceTree = "<group>"; };
 		784405921C941ED600C18B75 /* ElectromagneticOcean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectromagneticOcean.swift; sourceTree = "<group>"; };
 		784405981C94745500C18B75 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		7844059B1C954DC700C18B75 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		7844059D1C954E7D00C18B75 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Setting.strings"; sourceTree = "<group>"; };
 		78AE9B071C911CDD003ABE56 /* StyleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleViewController.swift; sourceTree = "<group>"; };
 		78CD74211C92B46300D3BE18 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
 		78F7C0D61C90570A00CCBB7B /* ThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
@@ -363,6 +363,7 @@
 				TargetAttributes = {
 					783593051C7C427200505B4C = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = DJ5N6T769K;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -510,7 +511,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7835930E1C7C427200505B4C /* Base */,
-				7839FE1B1C7CBE8300B504D7 /* zh-Hans */,
+				7844059B1C954DC700C18B75 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -572,7 +573,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				783F4D491C800F2D00F8C7DF /* Base */,
-				783F4D4B1C800F5400F8C7DF /* zh-Hans */,
+				7844059D1C954E7D00C18B75 /* zh-Hans */,
 			);
 			name = Setting.storyboard;
 			sourceTree = "<group>";

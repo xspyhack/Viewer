@@ -25,7 +25,7 @@ class StyleViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "Style"
+        title = NSLocalizedString("Style", comment: "")
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,7 +90,7 @@ extension StyleViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("StyleTableViewCellIdentifier", forIndexPath: indexPath)
         
         if indexPath.section == 1 {
-            cell.textLabel?.text = "License"
+            cell.textLabel?.text = NSLocalizedString("License", comment: "")
             cell.accessoryType = .DisclosureIndicator
         } else {
             cell.textLabel?.text = stylesArray[indexPath.row].name
