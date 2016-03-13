@@ -5,7 +5,7 @@ Viewer is a simple tool to view web page source code with Syntax-Highlighted.
 ##### You can view web page source code with the following ways:
 
 + Enter web page URL in Viewer App;
-+ Share Extension: Click the Action button at the bottom of your browser (Safari), select Viewer icon in the popup view (action sheet), then switch to Viewer App;
++ Share Extension: Click the Action button at the bottom of your browser (Safari etc.), select Viewer item in the popup view (action sheet), then switch to Viewer App;
 + Action Extension:  Click the Action button at the bottom of your browser ( Safari etc.), directly view web page source code in Safari.
 
 Viewer is very easy to use, you can simply copy any URL, and then switch to Viewer, wait until it finishes loading, it will automatically complete the whole process for you.
