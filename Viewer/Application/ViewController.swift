@@ -23,13 +23,13 @@ class ViewController: UIViewController {
         return webView
     }()
     
-    lazy var presentationTransitionManager: PresentationTransitionManager = {
+    private lazy var presentationTransitionManager: PresentationTransitionManager = {
         return PresentationTransitionManager()
     }()
     
     private var HTMLString: String?
 
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet private weak var messageLabel: UILabel!
     @IBOutlet private weak var outerButton: UIButton!
     @IBOutlet private weak var innerButton: UIButton!
     @IBOutlet private weak var backgroundView: UIView!
@@ -159,7 +159,7 @@ class ViewController: UIViewController {
     typealias Action = () -> Void
     typealias AsyncTask = (Action) -> Void
 
-    let switchToMainThread: AsyncTask = { (action) -> Void in
+    private let switchToMainThread: AsyncTask = { (action) -> Void in
         dispatch_async(dispatch_get_main_queue(), action)
     }
     

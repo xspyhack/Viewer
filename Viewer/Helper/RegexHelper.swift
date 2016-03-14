@@ -9,7 +9,7 @@
 import Foundation
 
 struct RegexHelper {
-    let regex: NSRegularExpression
+    private let regex: NSRegularExpression
     
     init (_ pattern: String) throws {
         try regex = NSRegularExpression(pattern: pattern, options: .CaseInsensitive)

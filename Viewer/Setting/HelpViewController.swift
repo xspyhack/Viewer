@@ -27,12 +27,12 @@ class HelpViewController: UIViewController {
     }
     
     @IBAction func mailToMe(sender: AnyObject) {
-        let appVersion = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"]
-        let appBuild = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"]
+        let appVersion = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String ?? "unknow"
+        let appBuild = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String ?? "unknow"
         let systemName = UIDevice.currentDevice().systemName
         let systemVersion = UIDevice.currentDevice().systemVersion
         
-        sendMailToRecipients(["xspyhack@gmail.com"], ccRecipients:[""], withSubject: NSLocalizedString("The Viewer Feeds", comment: "") + " - v\(appVersion ?? "unknow") (\(appBuild ?? "unknow")) (\(systemName) \(systemVersion))")
+        sendMailToRecipients(["xspyhack@gmail.com"], ccRecipients:[""], withSubject: NSLocalizedString("The Viewer Feeds", comment: "") + " - v\(appVersion) (\(appBuild)) (\(systemName) \(systemVersion))")
     }
     
     private func sendMailToRecipients(recipients: [String], ccRecipients: [String], withSubject subject: String) {

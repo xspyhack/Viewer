@@ -41,8 +41,15 @@ class SettingViewController: UIViewController, SegueHandlerType {
     }
     
     private func sponsorship() {
+        
         if let url = NSURL(string: "alipayqr://platformapi/startapp?saId=10000007&qrcode=https://qr.alipay.com/aex01834ritbtrlux7ogcbf") {
-            UIApplication.sharedApplication().openURL(url)
+            if UIApplication.sharedApplication().canOpenURL(url) {
+                UIApplication.sharedApplication().openURL(url)
+            } else if let codeURL = NSURL(string: "https://tfsimg.alipay.com/images/mobilecodec/T1Y3dmXbFgXXXXXXXX") {
+                UIApplication.sharedApplication().openURL(codeURL)
+            } else {
+                tv_print("Can't open url")
+            }
         } else {
             tv_print("error")
         }
