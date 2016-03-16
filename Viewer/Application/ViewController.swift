@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         webView.scrollView.showsHorizontalScrollIndicator =  false
         webView.backgroundColor = UIColor.whiteColor()
         webView.hidden = true
+        webView.allowsLinkPreview = true
         
         return webView
     }()
@@ -301,7 +302,7 @@ extension ViewController: WKNavigationDelegate {
     func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
         webView.hidden = true
         stopLoading()
-        messageLabel.text = NSLocalizedString("The Viewer can't open the page because the server can't be found.", comment: "")
+        messageLabel.text = NSLocalizedString("Oops! The Viewer can't open the page because the server can't be found.", comment: "")
         tv_print(error.debugDescription)
     }
     

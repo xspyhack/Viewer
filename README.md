@@ -19,6 +19,7 @@ Copy a picture’s Share URL in *Instagram App*, and switch to *Viewer App*. Aft
 #### Todo
 
 + Search with Syntax-Highlighted
++ URL detection (use 3D Touch to perview links?[PeekPop](https://github.com/marmelroy/PeekPop))
 
 Thanks for [@lxxi Chai](https://github.com/chaiyixiao) who translated this docs to English.
 
