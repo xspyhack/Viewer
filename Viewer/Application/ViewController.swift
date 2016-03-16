@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         webView.scrollView.showsHorizontalScrollIndicator =  false
         webView.backgroundColor = UIColor.whiteColor()
         webView.hidden = true
+        webView.allowsBackForwardNavigationGestures = true
         webView.allowsLinkPreview = true
         
         return webView
