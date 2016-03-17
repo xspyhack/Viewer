@@ -24,8 +24,6 @@ class ThemeViewController: UIViewController, SegueHandlerType {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        title = NSLocalizedString("Theme", comment: "")
     }
 
     override func didReceiveMemoryWarning() {
