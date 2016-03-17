@@ -130,9 +130,9 @@
 		784405921C941ED600C18B75 /* ElectromagneticOcean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectromagneticOcean.swift; sourceTree = "<group>"; };
 		784405981C94745500C18B75 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		7844059B1C954DC700C18B75 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		7844059D1C954E7D00C18B75 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Setting.strings"; sourceTree = "<group>"; };
 		78AE9B071C911CDD003ABE56 /* StyleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleViewController.swift; sourceTree = "<group>"; };
 		78CD74211C92B46300D3BE18 /* SegueHandlerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
+		78ED345C1C9B041200D3985E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Setting.strings"; sourceTree = "<group>"; };
 		78F7C0D61C90570A00CCBB7B /* ThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		78F7C0D81C905AB300CCBB7B /* PresentationTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationTransitionManager.swift; sourceTree = "<group>"; };
 		78F7C0DA1C905D6B00CCBB7B /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
@@ -573,7 +573,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				783F4D491C800F2D00F8C7DF /* Base */,
-				7844059D1C954E7D00C18B75 /* zh-Hans */,
+				78ED345C1C9B041200D3985E /* zh-Hans */,
 			);
 			name = Setting.storyboard;
 			sourceTree = "<group>";

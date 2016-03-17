@@ -25,7 +25,6 @@ class StyleViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = NSLocalizedString("Style", comment: "")
     }
 
     override func didReceiveMemoryWarning() {

@@ -2,20 +2,23 @@
 /* Class = "UILabel"; text = "Title"; ObjectID = "53W-qF-EeA"; */
 "53W-qF-EeA.text" = "Title";
 
+/* Class = "UIViewController"; title = "Help"; ObjectID = "Efg-VD-Qtx"; */
+"Efg-VD-Qtx.title" = "帮助";
+
 /* Class = "UINavigationItem"; title = "设置"; ObjectID = "KnK-YU-vcB"; */
 "KnK-YU-vcB.title" = "设置";
+
+/* Class = "UIViewController"; title = "Style"; ObjectID = "SNZ-Zs-rod"; */
+"SNZ-Zs-rod.title" = "样式";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "VNH-g4-eN4"; */
 "VNH-g4-eN4.text" = "Title";
 
-/* Class = "UILabel"; text = "> 技术本身是无罪的。"; ObjectID = "hbs-J6-mYz"; */
-"hbs-J6-mYz.text" = "> 技术本身是无罪的。";
-
-/* Class = "UILabel"; text = "v1.0"; ObjectID = "iRc-JN-TiZ"; */
-"iRc-JN-TiZ.text" = "v1.0";
+/* Class = "UINavigationItem"; title = "Theme"; ObjectID = "Whm-cb-1CT"; */
+"Whm-cb-1CT.title" = "主题";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "vRP-jd-Z78"; */
 "vRP-jd-Z78.text" = "Title";
 
-/* Class = "UIButton"; normalTitle = "Mail To Developer"; ObjectID = "yOX-gS-AkI"; */
+/* Class = "UIButton"; normalTitle = "📧 Mail To Developer"; ObjectID = "yOX-gS-AkI"; */
 "yOX-gS-AkI.normalTitle" = "📧 发邮件给开发者";
