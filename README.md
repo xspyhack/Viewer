@@ -1,6 +1,6 @@
 # Viewer - View the real
 
-[![swift: v2.1](https://img.shields.io/badge/swift-v2.1-orange.svg)](https://swift.org) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
+[![swift: v2.1](https://img.shields.io/badge/swift-v2.1-orange.svg)](https://swift.org) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT) [![App Store: v1.0.2](https://img.shields.io/badge/appstore-v1.0.2-brightgreen.svg)](https://appsto.re/cn/1N2Zab.i)
 
 `Viewer` is a simple tool to view web page source code with Syntax-Highlighted.
 
