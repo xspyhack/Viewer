@@ -9,13 +9,13 @@
 import Foundation
 
 // tv = The Viewer
-func tv_print<T>(message: T, file: String = __FILE__, method: String = __FUNCTION__, line: Int = __LINE__) {
+func tv_print<T>(message: T, file: String = #file, method: String = #function, line: Int = #line) {
     #if DEBUG
         print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
     #endif
 }
 
-func tv_debugPrint<T>(message: T, file: String = __FILE__, method: String = __FUNCTION__, line: Int = __LINE__) {
+func tv_debugPrint<T>(message: T, file: String = #file, method: String = #function, line: Int = #line) {
     #if DEBUG
         debugPrint("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
     #endif

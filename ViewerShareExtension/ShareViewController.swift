@@ -60,7 +60,7 @@ class ShareViewController: UIViewController {// SLComposeServiceViewController {
     }
     
     private func hideAlertViewAfter(delay: NSTimeInterval) {
-        performSelector("hide", withObject: nil, afterDelay: delay)
+        performSelector(#selector(hideAlertView), withObject: nil, afterDelay: delay)
     }
     
     @objc private func hideAlertView() {
